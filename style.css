@@ -421,3 +421,42 @@ button {
   font-size: 1rem;
   font-weight: 400;
 }
+
+.careers {
+  padding: 80px 0;
+  background: #fff;
+}
+.center-tag {
+  display: block;
+  margin-bottom: 40px;
+  color: #000;
+  text-align: center;
+}
+.careers .split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.careers h2 {
+  margin-bottom: 20px;
+  color: #0033cc;
+  font-size: 3rem;
+  font-weight: 300;
+}
+.careers p {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 1.1rem;
+}
+.btn-blue {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #0033cc;
+  color: #fff;
+  font-weight: 600;
+}
+.video-ph {
+  min-height: 350px;
+  background: url(./assets/career-profile.jpeg) center / cover no-repeat;
+}
