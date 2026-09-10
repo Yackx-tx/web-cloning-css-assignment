@@ -271,3 +271,54 @@ button {
   color: #a0aec0;
   font-size: 0.85rem;
 }
+
+.newsletter {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  padding: 60px 0;
+  color: #fff;
+}
+.newsletter .bg-ph {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url(./assets/shortlist-newsletter-banner.png);
+  background-position: center;
+  background-size: cover;
+}
+.split-align {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.newsletter h2 {
+  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 400;
+}
+.newsletter p {
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+.newsletter form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 600px;
+}
+.newsletter input {
+  min-width: 0;
+  flex: 1;
+  padding: 14px;
+  border: none;
+}
+.newsletter button {
+  padding: 0 24px;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+}
