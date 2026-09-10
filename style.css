@@ -146,7 +146,7 @@ button {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background-image: url(./assets/hero-section-1.jpeg);
+  background-image: url(./assets/hero-section-1.png);
 }
 .item-card .content,
 .item-feature .content {
