@@ -4,7 +4,7 @@
   padding: 0;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   background: #fff;
   color: #000;
@@ -61,11 +61,63 @@ button {
 }
 .header-actions {
   display: flex;
-  gap: 24px;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
   font-weight: 600;
 }
 .btn-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   color: #fff;
   font-weight: 600;
+}
+.btn-search img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+/* hero section styles */
+.hero-grid-sec {
+  padding: 60px 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.item-text {
+  grid-column: 1 / 3;
+  padding-bottom: 40px;
+}
+.item-text h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.item-text p {
+  max-width: 90%;
+  margin-bottom: 24px;
+  color: #e0e4e8;
+  font-size: 1.1rem;
+}
+.btn-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.8rem;;
+}
+.btn-circle:hover {
+  background: hsla(216, 100%, 52%, 0.4);
 }
