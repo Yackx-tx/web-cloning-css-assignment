@@ -1,3 +1,10 @@
+:root {
+  --dark: #02111b;
+  --card-dark: #051c2c;
+  --blue: #2b65ff;
+  --content-gap: 20px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +23,7 @@ a {
 button {
   cursor: pointer;
   border: none;
-  background: none;
+  background: 0 0;
 }
 .wrap {
   max-width: 1400px;
@@ -24,15 +31,12 @@ button {
   padding: 0 40px;
   width: 100%;
 }
-
 .theme-dark {
-  background: #02111b;
+  background: var(--dark);
   color: #fff;
 }
 .theme-dark header {
-  background: #02111b;
-}
-.theme-dark header {
+  background: var(--dark);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 20px 0;
   font-size: 0.9rem;
@@ -81,18 +85,16 @@ button {
   height: 40px;
   filter: brightness(0) invert(1);
 }
-
-/* hero section styles */
 .hero-grid-sec {
   padding: 60px 0;
 }
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: var(--content-gap);
 }
 .item-text {
-  grid-column: 1 / 3;
+  grid-column: 1/3;
   padding-bottom: 40px;
 }
 .item-text h1 {
@@ -116,22 +118,27 @@ button {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  font-size: 1.8rem;;
+  font-size: 1.8rem;
 }
 .btn-circle:hover {
   background: hsla(216, 100%, 52%, 0.4);
 }
-
 .hero-grid article {
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #051c2c;
+  background: var(--card-dark);
+}
+.item-card .top-ph,
+.item-feature .bg-ph,
+.newsletter .bg-ph {
+  background-position: center;
+  background-size: cover;
 }
 .item-feature {
-  grid-column: 3 / 5;
-  grid-row: 1 / 3;
+  grid-column: 3/5;
+  grid-row: 1/3;
   min-height: 400px;
   justify-content: flex-end;
 }
@@ -141,11 +148,14 @@ button {
   z-index: 1;
   background-image: url(./assets/hero-section-1.jpeg);
 }
+.item-card .content,
 .item-feature .content {
   z-index: 2;
   display: flex;
   flex: 1;
   flex-direction: column;
+}
+.item-feature .content {
   justify-content: flex-start;
   gap: 20px;
   padding: 48px 24px 24px;
@@ -172,9 +182,9 @@ button {
   gap: 8px;
   min-height: 50px;
   padding: 0 18px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: #fff;
   border: 1px solid hsla(0, 0%, 100%, 0.65);
-  color: hsl(235, 93%, 18%);
+  color: #030a58;
   font: inherit;
   font-weight: 600;
   text-decoration: none;
@@ -183,13 +193,11 @@ button {
   margin-top: auto;
 }
 .btn-feature-link:hover {
-  background: hsl(234, 93%, 38%);
+  background: #0618bb;
   color: #feffff;
 }
 .item-card {
-  position: relative;
-  overflow: hidden;
-  background: #051c2c;
+  min-width: 0;
 }
 .item-card-article {
   grid-column: 1;
@@ -216,15 +224,9 @@ button {
   inset: 0;
   z-index: 0;
   background-image: url(./assets/hero-section-2.png);
-  background-position: center;
-  background-size: cover;
 }
 .item-card .content {
   position: relative;
-  z-index: 1;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
   justify-content: flex-end;
   padding: 24px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 75%);
@@ -235,7 +237,7 @@ button {
   font-weight: 400;
 }
 .item-subscribe {
-  grid-column: 3 / 5;
+  grid-column: 3/5;
   grid-row: 3;
   display: flex;
   flex-direction: column;
@@ -247,20 +249,26 @@ button {
   margin-bottom: 20px;
   font-size: 1.2rem;
 }
-.item-subscribe form {
+.item-subscribe form,
+.newsletter form {
   display: flex;
+}
+.item-subscribe form {
   margin-bottom: 20px;
 }
-.item-subscribe input[type="email"] {
+.item-subscribe input[type="email"],
+.newsletter input {
   min-width: 0;
   flex: 1;
-  padding: 12px;
   border: none;
   background: #fff;
 }
+.item-subscribe input[type="email"] {
+  padding: 12px;
+}
 .item-subscribe form button {
   padding: 0 20px;
-  background: #0066cc;
+  background: #06c;
   color: #fff;
   font-weight: 700;
 }
@@ -271,7 +279,6 @@ button {
   color: #a0aec0;
   font-size: 0.85rem;
 }
-
 .newsletter {
   position: relative;
   overflow: hidden;
@@ -284,8 +291,6 @@ button {
   inset: 0;
   z-index: 0;
   background-image: url(./assets/shortlist-newsletter-banner.png);
-  background-position: center;
-  background-size: cover;
 }
 .split-align {
   position: relative;
@@ -305,16 +310,12 @@ button {
   font-size: 1.1rem;
 }
 .newsletter form {
-  display: flex;
   gap: 8px;
   width: 100%;
   max-width: 600px;
 }
 .newsletter input {
-  min-width: 0;
-  flex: 1;
   padding: 14px;
-  border: none;
 }
 .newsletter button {
   padding: 0 24px;
@@ -322,10 +323,9 @@ button {
   color: #000;
   font-weight: 600;
 }
-
 .podcast {
   padding: 80px 0;
-  background: linear-gradient(to bottom, #002266, #0044cc);
+  background: linear-gradient(to bottom, #026, #04c);
   color: #fff;
 }
 .podcast-header {
@@ -421,7 +421,6 @@ button {
   font-size: 1rem;
   font-weight: 400;
 }
-
 .careers {
   padding: 80px 0;
   background: #fff;
@@ -440,7 +439,7 @@ button {
 }
 .careers h2 {
   margin-bottom: 20px;
-  color: #0033cc;
+  color: #03c;
   font-size: 3rem;
   font-weight: 300;
 }
@@ -452,11 +451,387 @@ button {
 .btn-blue {
   display: inline-block;
   padding: 12px 24px;
-  background: #0033cc;
+  background: #03c;
   color: #fff;
   font-weight: 600;
 }
 .video-ph {
   min-height: 350px;
-  background: url(./assets/career-profile.jpeg) center / cover no-repeat;
+  background: url(./assets/career-profile.jpeg) center/cover no-repeat;
+}
+.social-impact {
+  width: 100%;
+  min-height: 720px;
+  background: var(--blue);
+}
+.impact-content {
+  display: flex;
+  min-height: 720px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.impact-content .tag {
+  margin-bottom: 16px;
+}
+.impact-content h2 {
+  max-width: 900px;
+  margin-bottom: 56px;
+  font-size: 3.4rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  width: 100%;
+}
+.impact-card {
+  min-width: 0;
+  text-align: left;
+}
+.impact-image {
+  width: 100%;
+  height: 260px;
+  margin-bottom: 24px;
+  background-position: center;
+  background-size: cover;
+}
+.impact-image-org {
+  background-image: url(./assets/career-profile.jpeg);
+}
+.impact-image-forward {
+  background-image: url(./assets/impact-2.png);
+}
+.impact-image-growth {
+  background-image: url(./assets/impact-1.jpeg);
+}
+.impact-card-title {
+  display: block;
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.impact-card p {
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.app-banner {
+  padding: 80px 0;
+  background: #fff;
+  text-align: center;
+}
+.app-banner h2 {
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.app-art {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  justify-self: end;
+}
+.download-info {
+  text-align: left;
+}
+.download-info p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.badges {
+  display: flex;
+  gap: 10px;
+}
+.store-badge {
+  display: block;
+  width: 120px;
+  height: 40px;
+}
+.store-badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 1100px) {
+  .wrap {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .header-flex {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .theme-dark nav {
+    order: 3;
+    flex: 0 0 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+  .hero-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .item-feature,
+  .item-subscribe,
+  .item-text {
+    grid-column: 1/-1;
+    grid-row: auto;
+  }
+  .item-feature {
+    min-height: 460px;
+  }
+  .item-card {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .impact-content,
+  .social-impact {
+    min-height: 0;
+  }
+  .impact-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .app-grid {
+    max-width: 760px;
+  }
+}
+@media (max-width: 700px) {
+  .wrap {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  .theme-dark header {
+    padding: 14px 0;
+  }
+  .logo,
+  .logo img {
+    width: 120px;
+  }
+  .header-actions {
+    margin-left: auto;
+    font-size: 0.75rem;
+  }
+  .theme-dark nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding-bottom: 4px;
+    white-space: nowrap;
+  }
+  .hero-grid-sec {
+    padding: 40px 0;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .item-card,
+  .item-feature,
+  .item-subscribe,
+  .item-text {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .item-text h1 {
+    font-size: 2.8rem;
+  }
+  .item-text p {
+    max-width: none;
+    font-size: 1rem;
+  }
+  .item-feature {
+    min-height: 420px;
+  }
+  .item-feature h2 {
+    max-width: 100%;
+    font-size: 1.8rem;
+  }
+  .item-card {
+    min-height: 280px;
+  }
+  .item-subscribe {
+    padding: 24px;
+  }
+  .item-subscribe form,
+  .newsletter form {
+    width: 100%;
+  }
+  .newsletter {
+    min-height: 0;
+    padding: 56px 0;
+  }
+  .newsletter h2 {
+    font-size: 2.2rem;
+  }
+  .newsletter form {
+    flex-wrap: wrap;
+  }
+  .newsletter button,
+  .newsletter input {
+    min-height: 48px;
+  }
+  .newsletter input {
+    min-width: 0;
+  }
+  .newsletter button {
+    flex: 0 0 auto;
+  }
+  .podcast {
+    padding: 56px 0;
+  }
+  .podcast-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .podcast-header h2 {
+    font-size: 2.2rem;
+  }
+  .podcast-featured {
+    grid-template-columns: 1fr;
+  }
+  .podcast-featured .info {
+    padding: 28px 24px;
+  }
+  .podcast-featured .player {
+    min-height: 240px;
+  }
+  .podcast-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .careers {
+    padding: 56px 0;
+  }
+  .careers .split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .careers h2 {
+    font-size: 2.3rem;
+  }
+  .video-ph {
+    min-height: 260px;
+  }
+  .impact-content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .impact-content h2 {
+    margin-bottom: 36px;
+    font-size: 2.3rem;
+  }
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .impact-image {
+    height: 220px;
+  }
+  .app-banner {
+    padding: 56px 0;
+  }
+  .app-banner h2 {
+    margin-bottom: 36px;
+    font-size: 2.1rem;
+  }
+  .app-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .app-art {
+    width: 100%;
+    max-width: 560px;
+    justify-self: center;
+  }
+  .download-info {
+    text-align: center;
+  }
+  .badges {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+footer {
+  padding: 32px 0;
+  border-top: 1px solid #e0e0e0;
+  background: #f8f9fa;
+  color: #161616;
+}
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 16px;
+  font-size: 1rem;
+}
+.footer-top button {
+  color: #555;
+  font-size: 1.25rem;
+}
+.footer-divider {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 28px;
+}
+.footer-logo {
+  display: block;
+  width: 170px;
+}
+.footer-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px 24px;
+  font-size: 0.9rem;
+}
+@media (max-width: 700px) {
+  footer {
+    padding: 24px 0;
+  }
+  .footer-top {
+    align-items: flex-start;
+  }
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer-nav {
+    justify-content: flex-start;
+    gap: 12px 18px;
+  }
 }
