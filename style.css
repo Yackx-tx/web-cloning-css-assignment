@@ -140,15 +140,15 @@ button {
   inset: 0;
   z-index: 1;
   background-image: url(./assets/hero-section-1.jpeg);
-  border: 1px solid #555;
 }
 .item-feature .content {
   z-index: 2;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 24px;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 48px 24px 24px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
 .tag {
@@ -179,7 +179,95 @@ button {
   font-weight: 600;
   text-decoration: none;
 }
+.item-feature .btn-feature-link {
+  margin-top: auto;
+}
 .btn-feature-link:hover {
   background: hsl(234, 93%, 38%);
   color: #feffff;
+}
+.item-card {
+  position: relative;
+  overflow: hidden;
+  background: #051c2c;
+}
+.item-card-article {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 320px;
+}
+.item-card-survey {
+  grid-column: 2;
+  grid-row: 2;
+  min-height: 380px;
+}
+.item-card-discussion {
+  grid-column: 1;
+  grid-row: 3;
+  min-height: 360px;
+}
+.item-card-webinar {
+  grid-column: 2;
+  grid-row: 3;
+  min-height: 300px;
+}
+.item-card .top-ph {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url(./assets/hero-section-2.png);
+  background-position: center;
+  background-size: cover;
+}
+.item-card .content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 75%);
+  color: #fff;
+}
+.item-card h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.item-subscribe {
+  grid-column: 3 / 5;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background: #1a2a36;
+}
+.item-subscribe p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+.item-subscribe form {
+  display: flex;
+  margin-bottom: 20px;
+}
+.item-subscribe input[type="email"] {
+  min-width: 0;
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #fff;
+}
+.item-subscribe form button {
+  padding: 0 20px;
+  background: #0066cc;
+  color: #fff;
+  font-weight: 700;
+}
+.social-logins {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #a0aec0;
+  font-size: 0.85rem;
 }
